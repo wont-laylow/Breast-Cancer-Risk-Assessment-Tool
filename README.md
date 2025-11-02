@@ -34,5 +34,7 @@ The patterns discovered were used to train a machine learning model that predict
   "interpretation": "Low risk"
 }
 
+---
+
 This project will be **expanded in the future** by integrating data and insights from **additional epidemiological studies** across Africa and beyond, to improve accuracy and generalizability.
 
