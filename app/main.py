@@ -6,6 +6,7 @@ from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
 from app.schemas import PatientData
+import time
 
 
 app = FastAPI(title="Breast Cancer Prediction API",
@@ -56,6 +57,8 @@ def predict(
             "negativity_score": round(float(proba[0][0]) * 100, 2),
             "interpretation": "High risk" if pred[0] == 1 else "Low risk"
         }
+
+        time.sleep(1.5)
 
         return templates.TemplateResponse(
             "index.html",
