@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breast Cancer Risk Assessment Tool</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎗️ Breast Cancer Risk Assessment Tool</h1>
+    <form action="/predict" method="post">
+
+      <label>Age</label>
+      <select name="Age" required>
+        <option>35-44</option>
+        <option>45-54</option>
+        <option>≥55</option>
+        <option><35</option>
+        <option>Unknown</option>
+      </select>
+
+      <label>Education</label>
+      <select name="Education">
+        <option>Primary school</option>
+        <option>Junior secondary school</option>
+        <option>≥ Senior secondary school</option>
+        <option>No formal education</option>
+        <option>Unknown</option>
+      </select>
+
+      <label>Family History</label>
+      <select name="Family_History">
+        <option>No</option>
+        <option>Yes</option>
+        <option>Unknown</option>
+      </select>
+
+      <label>Parity</label>
+      <select name="Parity">
+        <option>Nulliparous</option>
+        <option>1-2</option>
+        <option>3-4</option>
+        <option>≥5</option>
+        <option>Unknown</option>
+      </select>
+
+      <label>Menarche Age</label>
+      <select name="Menarche_Age">
+        <option><15</option>
+        <option>15</option>
+        <option>16</option>
+        <option>≥17</option>
+        <option>Unknown</option>
+      </select>
+
+      <label>Menopause Age</label>
+      <select name="Menopause_Age">
+        <option>Premenopausal</option>
+        <option><45</option>
+        <option>45-49</option>
+        <option>50-54</option>
+        <option>≥55</option>
+        <option>Unknown</option>
+      </select>
+
+      <label>Body Size</label>
+      <select name="Body_Size">
+        <option>Average</option>
+        <option>Slightly heavy</option>
+        <option>Slight</option>
+        <option>Very heavy</option>
+        <option>Unknown</option>
+      </select>
+
+      <button type="submit">Predict</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+      <h2>Prediction Result</h2>
+      <p><strong>Prediction:</strong> {{ result.interpretation }}</p>
+      <p><strong>Probability of Positive Diagnosis:</strong> {{ result.positivity_score }}%</p>
+      <p><strong>Probability of Negative Diagnosis:</strong> {{ result.negativity_score }}%</p>
+    </div>
+    {% elif error %}
+    <div class="error">
+      <p>Error: {{ error }}</p>
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>
