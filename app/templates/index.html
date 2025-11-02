@@ -13,6 +13,7 @@
 
       <label>Age</label>
       <select name="Age" required>
+        <option value="" disabled selected>-- Select Age --</option>
         <option>35-44</option>
         <option>45-54</option>
         <option>≥55</option>
@@ -22,6 +23,7 @@
 
       <label>Education</label>
       <select name="Education">
+        <option value="" disabled selected>-- Select Education Level --</option>
         <option>Primary school</option>
         <option>Junior secondary school</option>
         <option>≥ Senior secondary school</option>
@@ -31,6 +33,7 @@
 
       <label>Family History</label>
       <select name="Family_History">
+        <option value="" disabled selected>-- Select Family History --</option>
         <option>No</option>
         <option>Yes</option>
         <option>Unknown</option>
@@ -38,6 +41,7 @@
 
       <label>Parity</label>
       <select name="Parity">
+        <option value="" disabled selected>-- Select Parity --</option>
         <option>Nulliparous</option>
         <option>1-2</option>
         <option>3-4</option>
@@ -47,6 +51,7 @@
 
       <label>Menarche Age</label>
       <select name="Menarche_Age">
+        <option value="" disabled selected>-- Select Age at Menarche --</option>
         <option><15</option>
         <option>15</option>
         <option>16</option>
@@ -56,6 +61,7 @@
 
       <label>Menopause Age</label>
       <select name="Menopause_Age">
+        <option value="" disabled selected>-- Select Age at Menopause --</option>
         <option>Premenopausal</option>
         <option><45</option>
         <option>45-49</option>
@@ -66,6 +72,7 @@
 
       <label>Body Size</label>
       <select name="Body_Size">
+        <option value="" disabled selected>-- Select Body Size --</option>
         <option>Average</option>
         <option>Slightly heavy</option>
         <option>Slight</option>
@@ -82,6 +89,9 @@
       <p><strong>Prediction:</strong> {{ result.interpretation }}</p>
       <p><strong>Probability of Positive Diagnosis:</strong> {{ result.positivity_score }}%</p>
       <p><strong>Probability of Negative Diagnosis:</strong> {{ result.negativity_score }}%</p>
+      <p class="result-disclaimer">
+        Disclaimer: This tool provides a risk assessment and is not a substitute for medical advice.
+    </p>
     </div>
     {% elif error %}
     <div class="error">
@@ -89,5 +99,7 @@
     </div>
     {% endif %}
   </div>
+  
+  
 </body>
 </html>
