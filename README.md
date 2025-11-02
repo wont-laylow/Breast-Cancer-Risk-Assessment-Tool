@@ -11,7 +11,9 @@ This project is inspired by the study
 >  https://pmc.ncbi.nlm.nih.gov/articles/PMC5926189/
 The research analyzed **over 4,000 women** in Accra and Kumasi to identify key risk factors such as education level, family history, parity, menarche/menopause age, and body size.  
 The patterns discovered were used to train a machine learning model that predicts breast cancer likelihood.
+---
 
+This project will be **expanded in the future** by integrating data and insights from **additional epidemiological studies** across Africa and beyond, to improve accuracy and generalizability.
 ---
 
 ## ⚙️ Features
@@ -34,7 +36,5 @@ The patterns discovered were used to train a machine learning model that predict
   "interpretation": "Low risk"
 }
 
----
 
-This project will be **expanded in the future** by integrating data and insights from **additional epidemiological studies** across Africa and beyond, to improve accuracy and generalizability.
 
